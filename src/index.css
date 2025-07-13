@@ -1,0 +1,157 @@
+:root {
+  /* Basic font setup, nothing fancy */
+  --main-font: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Light theme colors */
+  --light-bg: #fff;
+  --light-text: #213547;
+
+  /* Dark theme colors */
+  --dark-bg: #1e1e1e;
+  --dark-text: rgba(255, 255, 255, 0.87);
+
+  --accent: #646cff;
+  --accent-hover: #535bf2;
+
+  --btn-bg-dark: #2d2d2d;
+  --btn-bg-light: #f1f1f1;
+
+  --round-corner: 10px;
+
+  font-family: var(--main-font);
+  line-height: 1.6;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+
+  min-height: 100vh;
+  min-width: 320px;
+
+  /* Soft fade for theme switches */
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+h1 {
+  font-size: 2.5rem; /* Big and bold title */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* List styling for the main section */
+ul.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #333; /* dark list item */
+  color: #fff;
+
+  margin-bottom: 10px;
+  border-radius: var(--round-corner);
+}
+
+/* Basic anchor link styling */
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* On hover, we dim it slightly */
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Buttons should feel clickable and comfy */
+button {
+  background: var(--btn-bg-dark);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: var(--round-corner);
+  font-family: inherit;
+
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+button:hover {
+  border-color: var(--accent);
+  background-color: #3c3c3c; /* Just a little lighter */
+}
+
+/* Accidental double focus support just in case */
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+}
+
+/* Input styling – might want to tweak this later */
+input[type="text"] {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 12px;
+  margin-top: 20px;
+
+  font-size: 1rem;
+  border-radius: var(--round-corner);
+  border: 1px solid #ccc;
+
+  box-sizing: border-box; /* Avoid weird sizing issues */
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+  }
+
+  li {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  button {
+    background-color: var(--btn-bg-light);
+    color: #000;
+  }
+}
+
+
+.new-item-form .btn {
+  margin-top: 12px;
+  display: block;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: red;
+  font-style: italic;
+}
